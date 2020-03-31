@@ -51,6 +51,7 @@ remove_containers ()
 
 remove_containers
 pull_images
+build_images
 # create_network
 create_containers
 add_crontab
