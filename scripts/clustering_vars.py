@@ -73,19 +73,22 @@ def setConf():
 		db = mongoClient[dbName]
 		confCollection = db[confCollectionName]
 		confRes = confCollection.find_one(sort=[('_id', DESCENDING)])
+		if confRes is not None:
+			objID = confRes.pop('_id')
+		else:
+			print('Configuration not found!')
+			return defaultConf
+
 	except ServerSelectionTimeoutError as e:
 		print('>>>[ERROR] MongoDB server ({}) cannot be reached!'.format(mongoURL()))
 		print('MongoDB Server error: ', e)
+
+		print(defaultConf)
+		return defaultConf
 	except Exception as e:
 		print('>>>[ERROR]: ', e)
 
 		print(defaultConf)
-		return defaultConf
-
-	if confRes is not None:
-		objID = confRes.pop('_id')
-	else:
-		print('Configuration not found!')
 		return defaultConf
 
 	configuration = dict(defaultConf)
