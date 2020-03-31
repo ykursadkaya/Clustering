@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"clusterDatabase.yearly_d3Collection"}],"uuid":"eb7159771bd44283aa328c8dfe83d59b"}

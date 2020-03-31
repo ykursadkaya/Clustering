@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"clusterDatabase.kCollection"}],"uuid":"8dc11b5c7b1b4c7d834c454ab599bb91"}

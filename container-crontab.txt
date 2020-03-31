@@ -1,0 +1,22 @@
+docker build -t optimal_k .
+
+docker build -t clustering .
+
+docker run --name daily_clustering clustering daily
+docker run --name weekly_clustering clustering weekly
+docker run --name monthly_clustering clustering monthly
+docker run --name yearly_clustering clustering yearly
+
+docker create --name daily_clustering clustering daily
+docker create --name weekly_clustering clustering weekly
+docker create --name monthly_clustering clustering monthly
+docker create --name yearly_clustering clustering yearly
+
+CONTAINER=`docker ps|grep name_of_container|awk '{print $1}'`
+
+docker start $CONTAINER
+
+crontab -e
+
+* * * * * /path/to/script.sh
+minute hour day_of_month month_of_year day_of_week /path/to/script.sh

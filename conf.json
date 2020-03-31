@@ -1,0 +1,46 @@
+{
+    "args" : {
+        "daily" : {
+            "limit" : 100
+        },
+        "weekly" : {
+            "limit" : 200
+        },
+        "monthly" : {
+            "limit" : 300
+        },
+        "yearly" : {
+            "limit" : 400
+        }
+    },
+    "optimalKarg" : "monthly",
+    "fileName" : "data.csv",
+    "hdfsURL" : "hdfs://clustering_hdfs:9000",
+    "hdfsFolder" : "/user/clustering/",
+    "startK" : 2,
+    "stopK" : 10,
+    "iterNum" : 3,
+    "thresholdedIterNum" : 6,
+    "threadNum" : 12,
+    "silhouetteThreshold" : 0.9,
+    "oldSilhouetteThreshold" : 0.8,
+    "png" : false,
+    "algorithms" : [ 
+        "KMeans"
+    ],
+    "filteringColumns" : {
+        "customer_id" : [ 
+            "application_id"
+        ]
+    },
+    "columns" : {
+        "cpu_percent" : [ 
+            "ram_usage", 
+            "network_usage", 
+            "io_usage"
+        ]
+    },
+    "dontScale" : [ 
+        "cpu_percent"
+    ]
+}

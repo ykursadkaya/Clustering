@@ -1,0 +1,20 @@
+FROM openjdk:8-slim-buster
+COPY --from=python:3.7.7-slim-buster / /
+
+RUN useradd -rm -d /home/clustering -s /bin/bash -g root -G sudo -u 1000 clustering
+USER clustering
+
+RUN echo export PATH=/home/clustering/.local/bin:$PATH >> ~/.bashrc
+
+WORKDIR /home/clustering
+
+COPY requirements.txt ./
+
+RUN pip install -r requirements.txt
+
+ENV MONGO_URL mongodb://clustering_mongodb:27017/
+
+COPY scripts ./src
+# COPY data ./data
+
+ENTRYPOINT [ "python", "src/optimal_k.py"]

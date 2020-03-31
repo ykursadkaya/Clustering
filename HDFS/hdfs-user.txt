@@ -1,0 +1,21 @@
+groupadd -r clustering && useradd --no-log-init -r -g clustering clustering
+
+sudo useradd clustering
+sudo groupadd clustering
+
+sudo usermod -a -G clustering(group) root(user)
+sudo usermod -a -G clustering(group) clustering(user)
+
+hdfs dfs -mkdir /
+hdfs dfs -mkdir /user
+hdfs dfs -mkdir /user/clustering
+
+hdfs dfs -chown -R clustering:clustering /user/clustering
+hdfs dfs -put /clustering_data/*_data.csv /user/clustering
+
+
+
+docker build -t hdfs-clustering -f hadoop-Dockerfile ../
+docker run -it hdfs-clustering /etc/bootstrap.sh -bash
+./putFiles
+docker run -it sequenceiq/hadoop-docker:2.7.0 /etc/bootstrap.sh -bash
