@@ -50,7 +50,6 @@ remove_containers ()
 
 
 remove_containers
-remove_db_hdfs
 pull_images
 # create_network
 create_containers
