@@ -87,11 +87,11 @@ run_containers ()
 
 add_crontab ()
 {
-	(crontab -l 2>/dev/null; echo "${CRON_MINUTE} ${CRON_HOUR} * * * if [ ! "$(docker ps -qa -f name=daily_clustering)" ]; then docker run --name daily_clustering clustering daily; else docker start daily_clustering; fi") | crontab -
-	(crontab -l 2>/dev/null; echo "${CRON_MINUTE} ${CRON_HOUR} * * 0 if [ ! "$(docker ps -qa -f name=weekly_clustering)" ]; then docker run --name weekly_clustering clustering weekly; else docker start weekly_clustering; fi") | crontab -
-	(crontab -l 2>/dev/null; echo "${CRON_MINUTE} ${CRON_HOUR} 1 * * if [ ! "$(docker ps -qa -f name=monthly_clustering)" ]; then docker run --name monthly_clustering clustering monthly; else docker start monthly_clustering; fi") | crontab -
-	(crontab -l 2>/dev/null; echo "${CRON_MINUTE} ${CRON_HOUR} 1 1 * if [ ! "$(docker ps -qa -f name=yearly_clustering)" ]; then docker run --name yearly_clustering clustering yearly; else docker start yearly_clustering; fi") | crontab -
-	(crontab -l 2>/dev/null; echo "${CRON_MINUTE} ${CRON_HOUR} 1 * * if [ ! "$(docker ps -qa -f name=optimal_k)" ]; then docker run --name optimal_k optimalk; else docker start optimal_k; fi") | crontab -
+	(crontab -l 2>/dev/null; echo "${CRON_MINUTE} ${CRON_HOUR} * * * if [ ! docker ps -qa -f name=daily_clustering ]; then docker run --name daily_clustering clustering daily; else docker start daily_clustering; fi") | crontab -
+	(crontab -l 2>/dev/null; echo "${CRON_MINUTE} ${CRON_HOUR} * * 0 if [ ! docker ps -qa -f name=weekly_clustering ]; then docker run --name weekly_clustering clustering weekly; else docker start weekly_clustering; fi") | crontab -
+	(crontab -l 2>/dev/null; echo "${CRON_MINUTE} ${CRON_HOUR} 1 * * if [ ! docker ps -qa -f name=monthly_clustering ]; then docker run --name monthly_clustering clustering monthly; else docker start monthly_clustering; fi") | crontab -
+	(crontab -l 2>/dev/null; echo "${CRON_MINUTE} ${CRON_HOUR} 1 1 * if [ ! docker ps -qa -f name=yearly_clustering ]; then docker run --name yearly_clustering clustering yearly; else docker start yearly_clustering; fi") | crontab -
+	(crontab -l 2>/dev/null; echo "${CRON_MINUTE} ${CRON_HOUR} 1 * * if [ ! docker ps -qa -f name=optimal_k ]; then docker run --name optimal_k optimalk; else docker start optimal_k; fi") | crontab -
 }
 
 remove_containers ()
