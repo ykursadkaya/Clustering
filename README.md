@@ -10,7 +10,7 @@ Clustering Module uses [Apache Spark™](https://spark.apache.org/) for clusteri
 
 **<u>Commands below are for Ubuntu 18.04 LTS, please change this commands for your operating system!</u>**
 
-## Docker
+## Docker
 
 This section document is for running clustering module on Docker containers. *You can skip this part and go directly Local section for running clustering module on bare metal or on a virtual machine.*
 
