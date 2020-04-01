@@ -1,10 +1,10 @@
 # Clustering Module
 
-Clustering Module performs segmentation analysis on Docker container performance data. Provides a summary information for given columns (i.e. CPU usage percent, RAM usage, network usage).
+Clustering Module performs segmentation analysis on Docker container performance data as a part of an container management system. Provides a summary information for given columns (i.e. CPU usage percent, RAM usage, network usage).
 
 Clustering Module helps sysadmin to observe system resource usage and utilization trends for Docker containers. Module first seperates data into macro and micro segments, and after that runs clustering algorithms on that segmented data.
 
-Clustering Module uses [Apache Spark™](https://spark.apache.org/) for clustering process, [Apache™ Hadoop®](https://hadoop.apache.org/) for reading data from, [Django](https://www.djangoproject.com/), [pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), [D3.JS](https://d3js.org/) for visualizing data and [MongoDB](https://www.mongodb.com/) for storing configurations and data.
+Clustering Module uses [Apache Spark™](https://spark.apache.org/) for clustering process, [Apache™ Hadoop®](https://hadoop.apache.org/) for reading data from,[MongoDB](https://www.mongodb.com/) for storing configurations and data and [Django](https://www.djangoproject.com/), [pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), [D3.JS](https://d3js.org/) for visualizing data.
 
 
 
