@@ -10,11 +10,11 @@ WORKDIR /home/clustering
 
 COPY requirements.txt ./
 
-RUN pip install -r requirements.txt
+RUN pip --no-cache-dir install -r requirements.txt
 
 ENV MONGO_URL mongodb://clustering_mongodb:27017/
 
 COPY scripts ./src
 # COPY data ./data
 
-ENTRYPOINT [ "python", "src/optimal_k.py"]
+ENTRYPOINT ["python", "src/optimal_k.py"]
