@@ -255,13 +255,13 @@ Add cronjobs to crontab
 ```bash
 (crontab -l 2>/dev/null; echo "30 0 1 * * python3 /home/clustering/Clustering/scripts/optimal_k.py") | crontab -
 
-(crontab -l 2>/dev/null; echo "30 0 * * * python3 /home/clustering/Clustering/scripts/clustering.py daily") | crontab -
+(crontab -l 2>/dev/null; echo "30 0 * * * python3 /home/clustering/Clustering/scripts/cluster.py daily") | crontab -
 
-(crontab -l 2>/dev/null; echo "30 0 * * 0 python3 /home/clustering/Clustering/scripts/clustering.py weekly") | crontab -
+(crontab -l 2>/dev/null; echo "30 0 * * 0 python3 /home/clustering/Clustering/scripts/cluster.py weekly") | crontab -
 
-(crontab -l 2>/dev/null; echo "30 0 1 * * python3 /home/clustering/Clustering/scripts/clustering.py monthly") | crontab -
+(crontab -l 2>/dev/null; echo "30 0 1 * * python3 /home/clustering/Clustering/scripts/cluster.py monthly") | crontab -
 
-(crontab -l 2>/dev/null; echo "30 0 1 1 * python3 /home/clustering/Clustering/scripts/clustering.py yearly") | crontab -
+(crontab -l 2>/dev/null; echo "30 0 1 1 * python3 /home/clustering/Clustering/scripts/cluster.py yearly") | crontab -
 ```
 
 
@@ -279,6 +279,6 @@ You must run optimal_k.py script first and wait for finish its job.
 ```bash
 python3 /home/clustering/Clustering/scripts/optimal_k.py
 
-python3 /home/clustering/Clustering/scripts/clustering.py daily
+python3 /home/clustering/Clustering/scripts/cluster.py daily
 ```
 
